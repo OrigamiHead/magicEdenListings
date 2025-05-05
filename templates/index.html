@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magic Eden Orders</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #222;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Magic Eden Orders</h1>
+    <p>Total Orders: {{ total_orders }}</p> <!-- Mostrar el total de órdenes aquí -->
+    <table>
+        <thead>
+            <tr>
+                <th>Token ID</th>
+                <th>Price (BERA)</th>
+                <th>Seller</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.tokenId }}</td>
+                <td>{{ order.price }}</td>
+                <td>{{ order.maker }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
